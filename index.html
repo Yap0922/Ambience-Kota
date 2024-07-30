@@ -2,171 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>MG Ambience Residence-Kota Syahbandar</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            margin: 0;
             font-family: 'Roboto', sans-serif;
         }
-        h1, h2, h3 {
-            font-family: 'Open Sans', sans-serif;
-        }
-        p {
-            font-family: 'Lora', serif;
-        }
-        .content {
-            text-align: center;
-        }
-        .map-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-            width:100%; 
-            font-size: 38px;
-            color: #004964;
-        }
+
         header {
+            background-color: white;
+            padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
+
         header img {
             height: 50px;
+            margin-left: 20px;
         }
+
         nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 80px;
+            margin-right: 20px;
         }
+
         nav a {
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
-            color: #333;
+            color: black;
             font-weight: bold;
+            font-family: 'Open Sans', sans-serif;
         }
+
+        nav a:hover {
+            color: #ff9900;
+        }
+
         .hero {
             position: relative;
-            height: 80vh;
-            background-image: url('path-to-your-image.jpg');
-            background-size: cover;
-            background-position: center;
-            margin-top: 10px; /* Offset for fixed header */
+            width: 100%;
+            height: 500px;
         }
+
         .hero img {
-            width: 100%; /* Adjust this value as needed */
-            height: 750px; /* Adjust this value as needed */
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
+
         .text-overlay {
             position: absolute;
-            top: 55%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: rgb(255, 255, 255);
+            color: white;
         }
 
         .text-overlay h1 {
-            font-size: 52px;
+            font-family: 'Lora', serif;
+            font-size: 3em;
             margin: 0;
         }
 
         .text-overlay p {
-            font-size: 24px;
+            font-size: 1.2em;
             margin: 10px 0;
-            font-weight: bold;
         }
+
         .text-overlay .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #ff9900;
             color: white;
+            padding: 10px 20px;
             text-decoration: none;
+            font-size: 1em;
             border-radius: 5px;
+            display: inline-block;
         }
 
         .text-overlay .button:hover {
-            background-color: #0056b3;
+            background-color: #e68a00;
         }
-        
-        .about-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 100px 50px;
-            margin-top: 60px; /* Offset for fixed header */
-            background-color:#f8f8f8;
-            margin:0;
-        }
-        .text-content {
-            flex: 1;
-            padding-right: 20px;
-        }
-        .text-content h1 {
-            font-size: 48px;
-            color: #004964;
-        }
-        .text-content p {
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 20px;
-            color: #333;
-        }
-       
-        .content{
-            padding: 120px 0px;
+
+        .about-content, .content {
+            padding: 40px 20px;
             text-align: center;
-            align-items: center;
         }
-        .content2{
-            padding: 120px 0px;
-            text-align: center;
-            align-items: center;
-            background-color:#f8f8f8;
+
+        .about-content h1, .text-content2 h1 {
+            font-size: 2.5em;
+            font-family: 'Lora', serif;
         }
-        .text-content2{
-            flex: 1;
-            padding-right: 200px;
-            padding-left: 200px;
+
+        .about-content p, .text-content2 p {
+            font-size: 1.1em;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
         }
-        .text-content2 h1 {
-            font-size: 48px;
-            color: #004964;
-        }
-        .text-content2 p {
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 20px;
-            color: #333;
-        }
-       
-        
+
         .slideshow-container {
-            flex: 1;
             position: relative;
-            max-width: 100%;
-            margin-top: 60px;
+            max-width: 1000px;
+            margin: auto;
         }
-        
+
         .slides {
             display: none;
         }
+
         .slides img {
             width: 100%;
-            height: 710px;
-            object-fit: cover;
-            border-radius: 20%;
+            border-radius: 5px;
         }
+
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -181,94 +137,107 @@
             border-radius: 0 3px 3px 0;
             user-select: none;
         }
+
         .next {
             right: 0;
             border-radius: 3px 0 0 3px;
         }
+
         .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.8);
         }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
         .gallery-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 80%;
-            max-width: 800px;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin: auto;
         }
 
         .main-image img {
             width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: cover;
-            border: 1px solid #ddd;
+            max-width: 600px;
+            border-radius: 5px;
         }
 
         .thumbnail-images {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .thumbnail-images img {
-            max-width: 100px;
-            height: auto;
-            margin: 0 5px;
+            width: 100px;
+            margin: 5px;
             cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.3s;
+            border-radius: 5px;
+            transition: transform 0.2s;
         }
 
         .thumbnail-images img:hover {
-            border-color: #007BFF;
-        }
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button-container button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 0 10px;
-            cursor: pointer;
-            background-color: #003764;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            transform: scale(1.1);
         }
 
-        /* Modal Content */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 5px;
+        }
+
+        .button-container button:hover {
+            background-color: #e68a00;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
         .modal-content {
-            position: relative;
             background-color: #fefefe;
-            margin: auto;
+            margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
-            max-width: 500px; /* Adjust to fit content size */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            animation-name: animatetop;
-            animation-duration: 0.4s;
+            max-width: 600px;
         }
 
-        /* The Close Button */
         .close {
             color: #aaa;
             float: right;
@@ -282,225 +251,11 @@
             text-decoration: none;
             cursor: pointer;
         }
-
-        /* Image Style */
-        .modal-content img {
-            max-width: 100%; /* Ensure image does not exceed modal width */
-            height: auto; /* Maintain aspect ratio */
-            display: block;
-            margin: 0 auto; /* Center image horizontally */
-        }
-
-        /* Animation */
-        @keyframes animatetop {
-            from {top: -300px; opacity: 0} 
-            to {top: 0; opacity: 1}
-        }
-        .box-section {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .box-icon {
-            width: 200px;
-            height: 200px;
-            margin: 10px;
-            border-radius: 10px;
-            background-color: white;background-color: #faf9f9;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .box-icon:hover{
-            background-color: #d9e5f9;
-            
-        }
-
-        .box-icon img {
-            max-width: 50%;
-            max-height: 50%;
-            margin-bottom: 10px;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgb(255, 255, 255);
-            padding: 20px;
-            border-radius: 10px;
-            z-index: 999;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .popup-title {
-            text-align: center;
-            margin-bottom: 10px; /* Add some space between the title and the content */
-        }
-
-        /* Justify the content inside the popup */
-        .popup-content {
-            text-align: justify;
-        }
-
-        .popup.active {
-            display: block;
-        }
-        .popup img {
-        max-width: 100%;
-        border-radius: 10px;
-        margin-top: 10px;
-    }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 20px;
-            color: #333;
-        }
-        .center{
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-        }
-
-        footer {
-            background-color: rgb(44, 100, 152);
-            color: #fff;
-            padding: 10px 0;
-            text-align: left;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: center;
-            align-items: left;
-            flex-wrap: wrap;
-        }
-
-        .footer-section {
-            margin: 10px 30px;
-        }
-
-        .footer-section h2 {
-            margin-bottom: 10px;
-            font-size: 24px;
-            text-decoration: underline;
-        }
-
-        .footer-section p {
-            margin: 10px 0;
-            text-align: left;
-        }
-
-        .footer-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .footer-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .footer-icons img {
-            width: 30px;
-            height: 30px;
-        }
-        .contact-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .contact-info img {
-            margin-right: 10px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-    
-        .dot-container {
-            text-align: center;
-            padding: 20px;
-        }
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-        @media screen and (max-width: 768px) {
-    .hero {
-        height: 300px;
-    }
-    .text-overlay h1 {
-        font-size: 2em;
-    }
-    .text-overlay p {
-        font-size: 1em;
-    }
-    .text-overlay .button {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
-    .about-content, .content {
-        padding: 20px 10px;
-    }
-    .about-content h1, .text-content2 h1 {
-        font-size: 2em;
-    }
-    .about-content p, .text-content2 p {
-        font-size: 1em;
-    }
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    nav a {
-        margin: 5px 0;
-    }
-    .slideshow-container {
-        width: 100%;
-    }
-    .main-image img {
-        width: 100%;
-    }
-    .thumbnail-images img {
-        width: 80px;
-    }
-    .modal-content {
-        width: 90%;
-    }
-}
-
-
     </style>
-    
 </head>
 <body>
+    <!-- Your HTML content -->
+
     <header>
         <img src="images/logo.png" alt="Ambience Residence Logo">
         <nav>
@@ -521,80 +276,47 @@
         <p>YOUR BEST CHOICE</p>
         <a href="#about" class="button">Learn More</a>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
+
     <div id="about" class="about-content">
         <div class="text-content">
             <h1>Ambience Residence</h1>
             <p>@ Kota Syahbandar <br><br>
-                Ambience Residence @ Kota Syahbandar is strategically located in the heart of Melaka, surrounded by lush greenery and the tranquil flow of the river. This picturesque setting provides the perfect backdrop for a relaxing and comfortable lifestyle.
-            <br><br>
-            Offering both affordability and luxury, Ambience Residence provides a serene escape with stunning views of the paddy fields and natural landscapes. The development features 24-hour security and sheltered parking, ensuring residents' peace of mind.
-            <br><br>
-            Residents can indulge in a wide array of amenities, including an Olympic-sized swimming pool, a jogging track, a fully equipped gymnasium, and a children's playground. Additionally, a convenience store on-site ensures that everyday necessities are always within reach.
-            <br><br>
-            Experience the perfect blend of nature and modern living at Ambience Residence @ Kota Syahbandar.
-            </p>
-        </div>
-        <div class="slideshow-container">
-            <div class="slides fade">
-                <img src="images/Fullview.jpg" alt="Full Building">
-            </div>
-            <div class="slides fade">
-                <img src="images/masterroom.jpg" alt="Master Room">
-            </div>
-            <div class="slides fade">
-                <img src="images/bedroom1.jpg" alt="Bedroom">
-            </div>
-            <div class="slides fade">
-                <img src="images/livingroom.jpg" alt="Living Room">
-            </div>
-            <div class="slides fade">
-                <img src="images/diningroom.jpg" alt="Dining Room">
-            </div>
-            <div class="slides fade">
-                <img src="images/kitchen.jpg" alt="Kitchen">
-            </div>
-            <div class="slides fade">
-                <img src="images/toilet.jpg" alt="Toilet">
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-            <span class="dot" onclick="currentSlide(4)"></span> 
-            <span class="dot" onclick="currentSlide(5)"></span> 
-            <span class="dot" onclick="currentSlide(6)"></span> 
-            <span class="dot" onclick="currentSlide(7)"></span> 
+                Ambience Residence @ Kota Syahbandar is strategically located in the heart of Melaka, surrounded by commercial centres, international standard medical centres, and renowned higher learning institutions. It is well-connected to major highways, allowing for convenient access to and from the city center.</p>
         </div>
     </div>
 
-
-
     <div id="types" class="content">
-        <div class="text-content2">
-            <h1>Types</h1>
-            <h2>Choose Your Plan</h2>
-            <p>The unit designs consist of Type A (3 bedrooms-1088 square feet) and Type B (2 rooms-688 square feet). Both units are uniquely designed and optimizes the use of space in order to utilize the serviced apartments as your own home or to rent it out as a homestay. Each unit is built with materials of the highest quality and to ensure a cozy living environment.</p>
-            
-            <p style="font-weight: bolder;font-size: x-large;">Type A</p>
-            <p style="font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(21, 102, 167);font-weight: bold;" >3 Bedrooms & 2 Bathrooms (1088 square feet)</p>
+        <h1>UNIT TYPES</h1>
+        <!-- Type A -->
+        <div>
+            <h2>Type A</h2>
+            <div class="slideshow-container">
+                <div class="slides">
+                    <img src="images/a1.jpg" alt="Type A - Image 1">
+                </div>
+                <div class="slides">
+                    <img src="images/a2.jpg" alt="Type A - Image 2">
+                </div>
+                <div class="slides">
+                    <img src="images/a3.jpg" alt="Type A - Image 3">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
             <div class="gallery-container">
                 <div class="main-image">
-                    <img id="currentImage" src="images/a1.jpg" alt="Main Image">
+                    <img id="currentImageA" src="images/a1.jpg" alt="Type A Main Image">
                 </div>
                 <div class="thumbnail-images">
-                    <img src="images/a1.jpg" alt="Thumbnail 1" onclick="changeImage('images/a1.jpg')">
-                    <img src="images/a2.jpg" alt="Thumbnail 2" onclick="changeImage('images/a2.jpg')">
-                    <img src="images/a3.jpg" alt="Thumbnail 3" onclick="changeImage('images/a3.jpg')">
-                    <img src="images/a4.jpg" alt="Thumbnail 4" onclick="changeImage('images/a4.jpg')">
-                    <img src="images/a6.jpg" alt="Thumbnail 4" onclick="changeImage('images/a6.jpg')">
-                    <img src="images/a7.jpg" alt="Thumbnail 4" onclick="changeImage('images/a7.jpg')">
+                    <img src="images/a1.jpg" alt="Thumbnail 1" onclick="changeImage('images/a1.jpg', 'currentImageA')">
+                    <img src="images/a2.jpg" alt="Thumbnail 2" onclick="changeImage('images/a2.jpg', 'currentImageA')">
+                    <img src="images/a3.jpg" alt="Thumbnail 3" onclick="changeImage('images/a3.jpg', 'currentImageA')">
+                    <img src="images/a4.jpg" alt="Thumbnail 4" onclick="changeImage('images/a4.jpg', 'currentImageA')">
                 </div>
             </div>
             <div class="button-container">
@@ -615,19 +337,40 @@
                     <img src="images/floorA.jpg" alt="Floor Plan">
                 </div>
             </div>
-            <br>
-            <br> <p style="font-weight: bolder;font-size: x-large;">Type B</p>
-            <p style="font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(21, 102, 167);font-weight: bold;" >2 Bedrooms & 1 Bathrooms (688 square feet)</p>
+        </div>
+        
+        <!-- Type B -->
+        <div>
+            <h2>Type B</h2>
+            <div class="slideshow-container">
+                <div class="slides">
+                    <img src="images/b1.jpg" alt="Type B - Image 1">
+                </div>
+                <div class="slides">
+                    <img src="images/b2.jpg" alt="Type B - Image 2">
+                </div>
+                <div class="slides">
+                    <img src="images/b3.jpg" alt="Type B - Image 3">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
             <div class="gallery-container">
                 <div class="main-image">
-                    <img id="currentImage" src="images/b1.jpg" alt="Main Image">
+                    <img id="currentImageB" src="images/b1.jpg" alt="Type B Main Image">
                 </div>
                 <div class="thumbnail-images">
-                    <img src="images/b1.jpg" alt="Thumbnail 1" onclick="changeImage('images/b1.jpg')">
-                    <img src="images/b2.jpg" alt="Thumbnail 2" onclick="changeImage('images/b2.jpg')">
-                    <img src="images/b3.jpg" alt="Thumbnail 3" onclick="changeImage('images/b3.jpg')">
-                    <img src="images/b4.jpg" alt="Thumbnail 4" onclick="changeImage('images/b4.jpg')">
-                    <img src="images/b5.jpg" alt="Thumbnail 4" onclick="changeImage('images/b5.jpg')">
+                    <img src="images/b1.jpg" alt="Thumbnail 1" onclick="changeImage('images/b1.jpg', 'currentImageB')">
+                    <img src="images/b2.jpg" alt="Thumbnail 2" onclick="changeImage('images/b2.jpg', 'currentImageB')">
+                    <img src="images/b3.jpg" alt="Thumbnail 3" onclick="changeImage('images/b3.jpg', 'currentImageB')">
+                    <img src="images/b4.jpg" alt="Thumbnail 4" onclick="changeImage('images/b4.jpg', 'currentImageB')">
+                    <img src="images/b5.jpg" alt="Thumbnail 5" onclick="changeImage('images/b5.jpg', 'currentImageB')">
+                    <img src="images/b6.jpg" alt="Thumbnail 6" onclick="changeImage('images/b6.jpg', 'currentImageB')">
                 </div>
             </div>
             <div class="button-container">
@@ -648,182 +391,48 @@
                     <img src="images/floorB.jpg" alt="Floor Plan">
                 </div>
             </div>
-        
         </div>
     </div>
-    
-    <div id="facilities" class="content2">
-        
-        <div class="text-content2">
-            <h1>Facilities</h1>
-            <div class="box-section">
-                <div class="box-icon" onclick="showDetails('Security 24/7')">
-                    <img src="images\cctv.png" alt="CCTV Icon">
-                    <p>Security System</p>
-                </div>
-                <div class="box-icon" onclick="showDetails('Swimming Pool')">
-                    <img src="images\swim.png" alt="Pool Icon">
-                    <p>Swimming Pool</p>
-                </div>
-                <div class="box-icon" onclick="showDetails('Jogging Track')">
-                    <img src="images\track.png" alt="Jogging Icon">
-                    <p>Jogging Track</p>
-                </div>
-            </div>
-            <div class="box-section">
-                <div class="box-icon" onclick="showDetails('Children Playground')">
-                    <img src="images\playground.png" alt="Playground Icon">
-                    <p>Children Playground</p>
-                </div>
-                <div class="box-icon" onclick="showDetails('BBQ Area')">
-                    <img src="images\bbq.png" alt="bbq Icon">
-                    <p>BBQ Area</p>
-                </div>
-                <div class="box-icon" onclick="showDetails('Gymnasium')">
-                    <img src="images\gym.png" alt="Gym Icon">
-                    <p>GYMNASIUM</p>
-                </div>
-            </div>
-                <div id="popup" class="popup">
-                    <span class="close" onclick="closePopup()">&times;</span>
-                    <h3 id="popup-name" class="popup-title"></h3>
-                    <img id="popup-image" src="" alt="Facility Image">
-                </div>
-        </div>
-    </div>
-    <div id="location" class="content2">
-        <div class="text-content2">
-            <div class="map-container">
-                <div>
-                    <h3>Google Map Location</h3>
-                    <p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8800868683584!2d102.23171167472671!3d2.199028597781514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1f1db4a163035%3A0x31cbbd01db429926!2sM%20Group%20(MG%20Marketing%20and%20Management)!5e0!3m2!1sen!2smy!4v1721987058405!5m2!1sen!2smy" width="1500" height="850" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-  
-    <footer>
-        <div id="contact" class="footer-content">
-            <div class="footer-section address">
-                <h2>Address</h2>
-                <a href="https://www.google.com/maps/place/M+Group+(MG+Marketing+and+Management)/@2.1990286,102.2342866,15z/data=!4m2!3m1!1s0x0:0x31cbbd01db429926?sa=X&ved=1t:2428&ictx=111" style="color: white;">13, Jalan KLJ 1, Taman Kota Laksamana, 75200 Melaka</a>
-                <p style="color: white;">75200 Melaka</p>
-                <p style="color: white;">Malaysia</p>
-            </div>
-            <div class="footer-section contact">
-                <h2>Contact</h2>
-                <div class="contact-info">
-                    <img src="images/email.png" alt="Email Icon" width="30px" height="30px">
-                    <span> mgroup.management23@gmail.com</span>
-                </div>
-                <div class="contact-info">
-                    <img src="images/phone.jpg" alt="Phone Icon" width="33px" height="33px">
-                    <span>
-                        Phone:<br>
-                        +6011-1097 6160<br>
-                        +6016-387 3797<br>
-                        +6011-3737 7372<br>
-                        
-                        
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="footer-icons">
-            <a href="https://www.facebook.com/MgroupMelaka">
-                <img src="images/facebook.png" alt="Facebook Icon">
-            </a>
-            <a href="https://www.instagram.com/m.group__/">
-                <img src="images/ig.png" alt="Insta Icon">
-            </a>
-            <a href="https://www.tiktok.com/@mgroup.official?lang=en">
-                <img src="images/tiktok.png" alt="Tiktok Icon">
-            </a>
-        </div>
-    </footer>
 
     <script>
-         document.addEventListener("DOMContentLoaded", function() {
-            let slideIndex = 1;
-            showSlides(slideIndex);
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
             }
-
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("slides");
-                if (n > slides.length) {slideIndex = 1}
-                if (n < 1) {slideIndex = slides.length}
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slides[slideIndex-1].style.display = "block";
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
             }
-
-            document.querySelector(".prev").addEventListener("click", function() {
-                plusSlides(-1);
-            });
-
-            document.querySelector(".next").addEventListener("click", function() {
-                plusSlides(1);
-            });
-        });
-
-        function showModal(id) {
-            document.getElementById(id).style.display = "block";
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
         }
 
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
+        function changeImage(src, targetId) {
+            document.getElementById(targetId).src = src;
         }
 
-        function changeImage(imageSrc) {
-    document.getElementById('currentImage').src = imageSrc;
-}
-function showDetails(facilities) {
-        var popup = document.getElementById('popup');
-        var popupName = document.getElementById('popup-name');
-        var popupImage = document.getElementById('popup-image');
-
-        popup.style.display = 'block'; // Show the pop-up box
-
-        // Set the title based on the clicked facility
-        popupName.textContent = facilities;
-
-        // Set the image source based on the clicked facility
-        switch (facilities) {
-            case 'Security 24/7':
-                popupImage.src = 'images/Entrance.jpg';
-                break;
-            case 'Swimming Pool':
-                popupImage.src = 'images/pool.jpg';
-                break;
-            case 'Jogging Track':
-                popupImage.src = 'images/JOGGING.jpg';
-                break;
-            case 'Children Playground':
-                popupImage.src = 'images/playground.jpg';
-                break;
-            case 'BBQ Area':
-                popupImage.src = 'images/BBQ.jpg';
-                break;
-            case 'Gymnasium':
-                popupImage.src = 'images/gym.jpg';
-                break;
-            default:
-                popupImage.src = ''; // No image available
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
         }
-    }
 
-    function closePopup() {
-        var popup = document.getElementById('popup');
-        popup.style.display = 'none'; // Hide the pop-up box
-    }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
     </script>
 </body>
 </html>
