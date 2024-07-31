@@ -362,7 +362,7 @@ nav a {
     display: block;
 }
 .popup img {
-max-width: 90%;
+max-width: 100%;
 border-radius: 10px;
 margin-top: 10px;
 }
