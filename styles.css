@@ -503,6 +503,9 @@ footer {
         width: 150px;
         height: 150px;
     }
+    .popup {
+        position: relative;
+    }
     footer {
         padding: 10px 0;
     }
