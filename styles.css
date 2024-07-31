@@ -499,6 +499,7 @@ footer {
     }
     .slides img {
         height: 200px;
+        max-width: 100%;
     }
     .gallery-container {
         width: 100%;
