@@ -14,11 +14,11 @@
 </head>
 <body>
     <header>
-        <a href="#home"> <img src="images/logo.png" alt="Ambience Residence Logo"></a>
-        <div class="hamburger" id="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+        
+        <a href="#home"> <img src="images/faithview.jpeg" alt="Ambience Residence Logo"></a>
+        <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- This is the hamburger icon -->
         </div>
         <nav id="nav-menu">
             <a href="#home">HOME</a>
@@ -28,16 +28,19 @@
             <a href="#location">LOCATION</a>
             <a href="#contact">CONTACT US</a>
         </nav>
+    </div>
     </header>
 
     <div id="home" class="hero">
         
     </div>
-    <div class="text-overlay">
-        <h1>AMBIENCE KOTA SYAHBANDAR</h1>
-        <p>YOUR BEST CHOICE</p>
-        <a href="#about" class="button">Learn More</a>
-    </div>
+   
+        <div class="text-overlay">
+            <h1>AMBIENCE KOTA SYAHBANDAR</h1>
+            <p>YOUR BEST CHOICE</p>
+            <a href="#about" class="button">Learn More</a>
+        </div>
+   
     
     <div id="about" class="about-content">
         <div class="text-content">
@@ -54,22 +57,22 @@
         </div>
         <div class="slideshow-container">
             <div class="slides fade">
-                <img src="images/Fullview.jpg" alt="Full Building">
+                <img src="images/Full.jpg" alt="Full Building">
             </div>
             <div class="slides fade">
-                <img src="images/masterroom.jpg" alt="Master Room">
+                <img src="images/a1.jpg" alt="Master Room">
             </div>
             <div class="slides fade">
-                <img src="images/bedroom1.jpg" alt="Bedroom">
+                <img src="images/a6.jpg" alt="Bedroom">
             </div>
             <div class="slides fade">
-                <img src="images/livingroom.jpg" alt="Living Room">
+                <img src="images/a3.jpg" alt="Living Room">
             </div>
             <div class="slides fade">
-                <img src="images/diningroom.jpg" alt="Dining Room">
+                <img src="images/kpool.jpg" alt="Dining Room">
             </div>
             <div class="slides fade">
-                <img src="images/kitchen.jpg" alt="Kitchen">
+                <img src="images/kgym.jpg" alt="Kitchen">
             </div>
             <div class="slides fade">
                 <img src="images/toilet.jpg" alt="Toilet">
@@ -202,6 +205,7 @@
             <div class="map-container iframe">
                 <div>
                     <h3>Location</h3>
+                    <p style="font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(0, 0, 0);font-weight: bold;" >Faithview in house marketing sales office</p>
                     <p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8800868683584!2d102.23171167472671!3d2.199028597781514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1f1db4a163035%3A0x31cbbd01db429926!2sM%20Group%20(MG%20Marketing%20and%20Management)!5e0!3m2!1sen!2smy!4v1721987058405!5m2!1sen!2smy"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </p>
@@ -215,7 +219,7 @@
         <div id="contact" class="footer-content">
             <div class="footer-section address">
                 <h2>Address</h2>
-                <a href="https://www.google.com/maps/place/M+Group+(MG+Marketing+and+Management)/@2.1990286,102.2342866,15z/data=!4m2!3m1!1s0x0:0x31cbbd01db429926?sa=X&ved=1t:2428&ictx=111" style="color: white;">13, Jalan KLJ 1, Taman Kota Laksamana, 75200 Melaka</a>
+                <a href="https://www.google.com/maps/place/M+Group+(MG+Marketing+and+Management)/@2.1990286,102.2342866,15z/data=!4m2!3m1!1s0x0:0x31cbbd01db429926?sa=X&ved=1t:2428&ictx=111" style="color: white;">13, Jalan KLJ 1, Taman Kota Laksamana</a>
                 <p style="color: white;">75200 Melaka</p>
                 <p style="color: white;">Malaysia</p>
             </div>
@@ -226,14 +230,12 @@
                     <span> mgroup.management23@gmail.com</span>
                 </div>
                 <div class="contact-info">
-                    <img src="images/phone.jpg" alt="Phone Icon" width="33px" height="33px">
+                    <a href="https://www.wasap.my/601110976160/AmbienceKota"> <img src="images/phone.jpg" alt="Phone Icon" width="30px" height="30px"></a>
                     <span>
+                        <br>
                         Phone:<br>
                         +6011-1097 6160<br>
-                        +6016-387 3797<br>
-                        +6011-3737 7372<br>
-                        
-                        
+                        +6011-3737 7372<br> 
                     </span>
                 </div>
             </div>
@@ -310,7 +312,7 @@ function showDetails(facilities) {
                 popupImage.src = 'images/Entrance.jpg';
                 break;
             case 'Swimming Pool':
-                popupImage.src = 'images/pool.jpg';
+                popupImage.src = 'images/kpool.jpg';
                 break;
             case 'Jogging Track':
                 popupImage.src = 'images/JOGGING.jpg';
@@ -322,7 +324,7 @@ function showDetails(facilities) {
                 popupImage.src = 'images/BBQ.jpg';
                 break;
             case 'Gymnasium':
-                popupImage.src = 'images/gym.jpg';
+                popupImage.src = 'images/kgym.jpg';
                 break;
             default:
                 popupImage.src = ''; // No image available
@@ -333,11 +335,14 @@ function showDetails(facilities) {
         var popup = document.getElementById('popup');
         popup.style.display = 'none'; // Hide the pop-up box
     }
-    const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-        });
+    function toggleMenu() {
+    var nav = document.getElementById("nav-menu");
+    if (nav.style.display === "block") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "block";
+    }
+}
     </script>
 </body>
 </html>
