@@ -39,26 +39,28 @@ header {
     z-index: 1000;
 }
 header img {
-    height: 50px;
-}
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+    height: 80px;
 }
 
-.hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px 0;
-    transition: 0.4s;
-}
+
 nav {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
     padding-right: 80px;
+}
+
+
+.logo {
+    font-size: 1.5em;
+}
+
+
+
+.menu-icon {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
 }
 nav a {
     margin: 0 10px;
@@ -66,10 +68,17 @@ nav a {
     color: #333;
     font-weight: bold;
 }
+.navbar {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 .hero {
     position: relative;
     height: 100vh;
-    background-image: url('images/KEPALA.jpg');
+    background-image: url('images/Full.jpg');
     background-size: cover;
     background-position: center;
     margin-top: 10px; /* Offset for fixed header */
@@ -80,6 +89,9 @@ nav a {
     object-fit: cover;
 }
 
+
+  
+
 .text-overlay {
     position: absolute;
     top: 65%;
@@ -87,7 +99,7 @@ nav a {
     transform: translate(-50%, -50%);
     text-align: center;
     color: rgb(255, 255, 255);
-    
+   
 }
 
 .text-overlay h1 {
@@ -401,7 +413,7 @@ footer {
 }
 
 .footer-section {
-    margin: 10px 30px;
+    margin: 10px 30px 0px 30px;
 }
 
 .footer-section h2 {
@@ -417,7 +429,7 @@ footer {
 
 .footer-icons {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .footer-icons a {
@@ -432,7 +444,7 @@ footer {
 .contact-info {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .contact-info img {
@@ -446,19 +458,24 @@ footer {
     nav {
         display: none;
         flex-direction: column;
-        align-items: center;
-        background-color: #fff;
-        position: absolute;
-        top: 100%;
-        left: 0;
         width: 100%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #333;
     }
+    
     nav a {
-        margin: 10px 0;
+        padding: 10px;
+        border-top: 1px solid #010101;
     }
-    .hamburger {
-        display: flex;
+    
+    .menu-icon {
+        display: block;
+    }
+    
+    .navbar {
+        flex-direction: column;
     }
     .hero {
         height: 80vh;
