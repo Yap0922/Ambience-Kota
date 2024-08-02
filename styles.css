@@ -473,9 +473,9 @@ footer {
     
     
     .hero {
-        height: 80vh;
+        height: 100vh;
         margin-top: 10px; /* Offset for fixed header */
-        background-image: url('images/KEPALA.jpg');
+        background-image: url('images/Full.jpg');
         max-width: 100%;
     }
     .hero img {
