@@ -373,37 +373,26 @@ nav a {
 }
 
 /* Modal Content */
-.modal-content{
+.modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 100%;
-    max-width: fit-content; /* Adjust to fit content size */
+    width: 80%;
+    max-width: 500px; /* Adjust to fit content size */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     animation-name: animatetop;
     animation-duration: 0.4s;
 }
-.modal-content2{
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
-    max-width: fit-content; /* Adjust to fit content size */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+/* Image Style */
+.modal-content img {
+    max-width: 100%; /* Ensure image does not exceed modal width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center image horizontally */
 }
-.modal-content img{
-    width: fit-content;
-}
-.modal-content2 img{
-    width: 350px;
-    height:auto;
-}
+
 /* The Close Button */
 .close {
     color: #aaa;
