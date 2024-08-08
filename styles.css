@@ -144,7 +144,7 @@ nav a {
 .hero {
     position: relative;
     height: 100vh;
-    /* background-image: url('images/Homebg.jpg'); */
+    background-image: url('images/Full.jpg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -844,5 +844,6 @@ a{
 @media (max-width: 300px) {
     .navbar-header img{
         width: 18vh;
-        height: 10vh;}
+        height: 10vh;
     }
+}
