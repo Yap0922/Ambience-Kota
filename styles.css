@@ -2,6 +2,20 @@ body html{
     font-family: 'Roboto', sans-serif;
     
 }
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #1f386e;
+	border-radius: 10px;
+   
+}
+::-webkit-scrollbar-thumb {
+	background: #2b8294;
+	border-radius: 10px;
+}
+  ::-webkit-scrollbar-thumb:hover {
+	background: rgb(60, 152, 30);
+	
+  }
 #menu {
 	padding: 20px;
 	transition: all 0.8s;
@@ -20,6 +34,7 @@ body html{
 	color: #1f386e;
 	text-transform: uppercase;
 	letter-spacing: -1px;
+    margin-left: 100px;
 }
 
 #menu.navbar-default .navbar-nav > li > a {
@@ -34,29 +49,27 @@ body html{
     
 }
 #menu.navbar-default .navbar-nav > li > a:hover {
+    
 	color: rgb(60, 152, 30);
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: rgb(60, 152, 30) !important;
     background-color: rgba(105, 207, 247, 0.253) !important;
     border-radius: 1vh !important;
+    
 }
 
 .navbar-toggle {
-	background-color:#1f386e ;
+	background-color:#004964 !important ;
 	margin-top: 15px !important;
     margin-bottom: 15px !important;
 }
 .navbar-default .navbar-toggle>.icon-bar {
-	background-color:#ffffff
+	background-color:white !important;
 }
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: #1f386e;
 
-}
 .navbar-default .navbar-toggle:hover>.icon-bar {
-	background-color: #fff;
-	
+	background-color: rgb(60, 152, 30);
 }
 ul a{ 
     padding-left: 10px !important;
@@ -66,7 +79,9 @@ ul a{
 
 h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
+    font-weight: bold !important;
 }
+
 p {
     font-family: 'Lora', serif;
 }
@@ -80,30 +95,21 @@ p {
     width:100%; 
     font-size: 38px;
     color: #004964;
-   
+    
 }
 .map-container iframe {
     width: 1000px;
     height: 500px;
     max-width: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fefefe;
+    border-radius: 10px;
     border: none; /* Removes iframe border */
     box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
+
 header img {
-    height: 30px;
+    height: 50px;
 }
 
 
@@ -138,19 +144,20 @@ nav a {
 .hero {
     position: relative;
     height: 100vh;
-    background-image: url('images/Full.jpg');
+    /* background-image: url('images/Homebg.jpg'); */
     background-size: cover;
     background-position: center;
+    overflow: hidden;
     margin-top: 10px; /* Offset for fixed header */
 }
 .hero img {
     width: 100%; /* Adjust this value as needed */
-    height: 750px; /* Adjust this value as needed */
+    height: 100%; /* Adjust this value as needed */
     object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    
 }
 
-
-  
 
 .text-overlay {
     position: absolute;
@@ -158,15 +165,17 @@ nav a {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    
+    
+   
 }
 
 .text-overlay h1 {
     font-size: 48px;
     margin: 0;
     font-weight: bolder;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #004964;
+    text-shadow: rgb(255, 255, 255) 0.1em 0.1em 0.2em;
 }
 
 .text-overlay p {
@@ -174,20 +183,24 @@ nav a {
     margin: 10px 0;
     font-weight: bold;
     margin-bottom: 50px;
-    
+    color:#ffffff;
+    text-shadow: rgb(0, 0, 0) 0.2em 0.2em 0.3em;
 }
-.text-overlay .button {
+.text-overlay a {
     
     display: inline-block;
     padding: 10px 30px;
-    background-color: #007bff;
-    color: white;
+    background-color: #017fac;
+    color: rgb(237, 235, 235);
     text-decoration: none;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
-.text-overlay .button:hover {
-    background-color: #0056b3;
+.text-overlay a:hover {
+    background-color: #004964;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 
@@ -206,8 +219,8 @@ nav a {
 }
 .text-content h1 {
     font-size: 48px;
-    font-weight: bold;
     color: #004964;
+    font-weight: bold;
 }
 .text-content p {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -234,7 +247,6 @@ nav a {
 }
 .text-content2 h1 {
     font-size: 48px;
-    font-weight: bold;
     color: #004964;
 }
 .text-content2 p {
@@ -255,11 +267,10 @@ nav a {
 }
 .slides img {
     width: 100%;
-    min-width: 200px;
-    min-height: 200px;
-    height: 600px;
+    height: 60vh;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
+
 }
 .prev, .next {
     cursor: pointer;
@@ -268,19 +279,23 @@ nav a {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: rgb(255, 255, 255);
+    background-color: #000000aa;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 10px 10px 0;
     user-select: none;
+    
 }
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 10px 0 0 10px;
 }
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(59, 59, 59, 0.8);
+    color: #d9e5f9;
+    text-decoration: none;
 }
 .gallery-container {
     display: flex;
@@ -292,7 +307,7 @@ nav a {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin: auto;
-    border-radius: 2%;
+    border-radius: 10px;
 }
 
 .main-image img {
@@ -319,8 +334,9 @@ nav a {
 }
 
 .thumbnail-images img:hover {
-    border-color: #007BFF;
+    border-color: #003764;
 }
+
 .button-container {
     text-align: center;
     margin-top: 20px;
@@ -335,6 +351,13 @@ nav a {
     border: none;
     border-radius: 5px;
 }
+
+.box-icon i{
+    font-size: 50px;
+    color: #003764;
+    margin-bottom: 10px;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -350,19 +373,37 @@ nav a {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content{
     position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 500px; /* Adjust to fit content size */
+    width: 100%;
+    max-width: fit-content; /* Adjust to fit content size */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     animation-name: animatetop;
     animation-duration: 0.4s;
 }
-
+.modal-content2{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: fit-content; /* Adjust to fit content size */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+.modal-content img{
+    width: fit-content;
+}
+.modal-content2 img{
+    width: 350px;
+    height:auto;
+}
 /* The Close Button */
 .close {
     color: #aaa;
@@ -379,12 +420,7 @@ nav a {
 }
 
 /* Image Style */
-.modal-content img {
-    max-width: 100%; /* Ensure image does not exceed modal width */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    margin: 0 auto; /* Center image horizontally */
-}
+
 
 /* Animation */
 @keyframes animatetop {
@@ -415,18 +451,8 @@ nav a {
     background-color: #d9e5f9;
     
 }
-.box-icon i{
-    font-size: 55px;
-    color:  #003764;
-    margin-bottom: 10px;
-    align-items: center;
-}
 
-.box-icon img {
-    max-width: 50%;
-    max-height: 50%;
-    margin-bottom: 10px;
-}
+
 .popup {
     display: none;
     position: fixed;
@@ -438,7 +464,6 @@ nav a {
     border-radius: 10px;
     z-index: 999;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    
 }
 
 .popup-title {
@@ -456,7 +481,7 @@ nav a {
 }
 .popup img {
 max-width: 100%;
-height:60vh;
+height:50vh;
 border-radius: 10px;
 margin-top: 10px;
 }
@@ -467,7 +492,7 @@ margin-top: 10px;
     right: 10px;
     cursor: pointer;
     font-size: 20px;
-    color: #333;
+    color: #040404;
 }
 .center{
     margin-left: auto;
@@ -476,23 +501,10 @@ margin-top: 10px;
 }
 
 
-/*.fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-  .fa-instagram {
-    background: #125688;
-    color: white;
-  }
-  .fa-tumblr {
-    background: #2c4762;
-    color: white;
-  } */
-
-  #footer{
+#footer{
 	background:#003764;
     padding: 3rem;
-    padding-left: 10px;
+    padding-left: 150px;
     color: rgba(255, 255, 255, 0.923);
 	/* padding-top: 5rem; */
 	padding-top: 7rem;
@@ -524,7 +536,6 @@ margin-top: 10px;
     font-weight: 600;
     padding-top: 2%;
     padding-bottom: 4%;
-
 }
 
 #footer li>a{
@@ -608,27 +619,42 @@ li{
     padding: 5px 20px 5px 20px;
     border-radius: 10px;
     height: 350px;
-    width:60vh;
-    
+    width: 45vh;
   
-    
 }
 .address-links li a{
 	color: #303030;
-    font-size: 12px;
     font-weight: 500;
 	color: #ffffff;
-    padding: 0.4rem 1rem 0.4rem 1rem;
+    padding: 0.7rem 1rem 0.5rem 1rem;
     
 }
 .address-links li i{
 	font-size: 16px;
     padding-right: 8px;
 	color: #ffffff;
-    margin-right: 10px;
+    margin-right: 12px;
+    
 }
 .address-links li i:nth-child(1){
 	padding-top: 9px;
+}
+
+.address-links li button{
+    background-color: rgb(80, 207, 232);
+    padding: 1px ;
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.address-links li button:hover{
+    background-color: rgb(42, 140, 42);
+}
+.address-links li button a:hover{
+
+    text-decoration: none;
 }
 .address-links .address1{
 	font-weight: 500;
@@ -653,30 +679,18 @@ li{
 a{
   text-decoration:none;
 }
-.button {
-   
-    padding: 5px 80px ;
-    background-color: #4CAF50; /* Green background color */
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    margin-left: 10px;
-    
-}
-
-.button:hover {
-    background-color: #45a049; /* Darker green color on hover */
-}
 
 
 @media (max-width: 800px) {
    
    
-    
+    #menu a.navbar-brand {
+        margin-left: 0px;
+    }
     .hero {
-        height: 100vh;
+        height: 50vh;
         margin-top: 10px; /* Offset for fixed header */
-        background-image: url('images/Full.jpg');
+        background-image: url('images/Homebg.jpg');
         max-width: 100%;
     }
     ul a{ 
@@ -685,7 +699,8 @@ a{
         
     }
     .hero img {
-        height: auto;
+        min-height: 50vh;
+        
     }
     .text-overlay h1 {
         font-size: 30px;
@@ -736,6 +751,9 @@ a{
     .thumbnail-images img {
         max-width: 50px;
     }
+    .modal-content img{
+        width: 40vh;
+    }
     .box-icon {
         width: 40vh;
         height: 25vh;
@@ -746,14 +764,15 @@ a{
     .popup {
         position:fixed;
         left: 50%;
-        width:80%;
-        height: auto;
     }
-   
     .popup img{
-        max-width: 100%;
-        height: 35vh;
+      
+      min-width: 40vh;
+      height: auto;
     }
+
+    
+    
     .map-container {
         padding: 0 5px; /* Adds padding on smaller screens */
     }
@@ -762,7 +781,6 @@ a{
         height: 300px; /* Adjust height for smaller screens if necessary */
     }
 
-    
     
     #footer{
         padding-left: 25px;
@@ -785,35 +803,46 @@ a{
         
     }
     .social-links{
-        height:42vh;
-       
+        height:42vh
+        
     }
     .address{
         margin-top: 20px;
-        height:40vh;
+        height:36vh;
         width:auto;
+    }
+    .address button{
+        font-size: 14px !important;
+    }
 }
+@media (max-width: 600px) {
+    .popup img{
+      
+        min-width: 40vh;
+        height: auto;
+      }
+    .navbar-header img{
+        width: 25vh;
+        height: 10vh;
+        
+    }
 }
 
-@media (max-width: 600px) {
-    .navbar-header img{
-            width: 25vh;
-            height: 10vh;
-            
+@media (max-width: 350px) {
+    .popup img{
+      
+        min-width: 30vh;
+        height: auto;
+      }
+      .navbar-header img{
+        width: 20vh;
+        height: 10vh;
+        
         }
-    }
-    
-    @media (max-width: 350px) {
+}
+
+@media (max-width: 300px) {
     .navbar-header img{
-            width: 20vh;
-            height: 10vh;
-            
-            }
-    }
-    
-    @media (max-width: 300px) {
-        .navbar-header img{
-            width: 18vh;
-            height: 10vh;
-        }
+        width: 18vh;
+        height: 10vh;}
     }
