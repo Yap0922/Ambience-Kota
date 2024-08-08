@@ -690,7 +690,7 @@ a{
     .hero {
         height: 50vh;
         margin-top: 10px; /* Offset for fixed header */
-        background-image: url('images/Homebg.jpg');
+        background-image: url('images/Full.jpg');
         max-width: 100%;
     }
     ul a{ 
