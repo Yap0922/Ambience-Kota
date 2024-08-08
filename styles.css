@@ -794,3 +794,26 @@ a{
         width:auto;
 }
 }
+
+@media (max-width: 600px) {
+    .navbar-header img{
+            width: 25vh;
+            height: 10vh;
+            
+        }
+    }
+    
+    @media (max-width: 350px) {
+    .navbar-header img{
+            width: 20vh;
+            height: 10vh;
+            
+            }
+    }
+    
+    @media (max-width: 300px) {
+        .navbar-header img{
+            width: 18vh;
+            height: 10vh;
+        }
+    }
