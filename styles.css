@@ -180,7 +180,8 @@ nav a {
 }
 
 .text-overlay h1 {
-    font-size: 48px;
+    font-size: 60px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     font-weight: bolder;
     color: #ffffff;
